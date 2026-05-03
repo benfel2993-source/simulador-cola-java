@@ -22,4 +22,30 @@ public class Cola {
             fin = nuevo;
         }
     }
+
+    public Nodo desencolar() {
+
+        if (estaVacia()) {
+            return null;
+        }
+
+        Nodo atendido = frente;
+        frente = frente.siguiente;
+
+        if (frente == null) {
+            fin = null;
+        }
+
+        return atendido;
+    }
+
+    public void mostrarCola() {
+
+        Nodo actual = frente;
+
+        while (actual != null) {
+            System.out.println(actual.id + " - " + actual.nombre + " - " + actual.servicio);
+            actual = actual.siguiente;
+        }
+    }
 }
